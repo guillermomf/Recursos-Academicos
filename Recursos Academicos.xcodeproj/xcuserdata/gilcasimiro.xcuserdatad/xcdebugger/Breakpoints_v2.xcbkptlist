@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8852C3A3-3CA9-4730-AB87-AB8C31924E14"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7631281A-8E86-4338-9C13-5555C0BBD698"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recursos Academicos/Network/MessagesSrv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "getStoredMessages(chatGroupId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  moduleName = "Recursos Academicos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "280"
+                  endingLineNumber = "280"
+                  offsetFromSymbolStart = "860">
+               </Location>
+               <Location
+                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  moduleName = "Recursos Academicos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "280"
+                  endingLineNumber = "280"
+                  offsetFromSymbolStart = "844">
+               </Location>
+               <Location
+                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  moduleName = "Recursos Academicos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "280"
+                  endingLineNumber = "280"
+                  offsetFromSymbolStart = "892">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

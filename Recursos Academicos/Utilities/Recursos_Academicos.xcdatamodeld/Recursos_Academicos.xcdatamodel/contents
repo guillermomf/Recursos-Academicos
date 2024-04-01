@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activities" representedClassName="Activities" syncable="YES" codeGenerationType="class">
+        <attribute name="addNewActivity" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assignedQualification" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="delivered" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fileFound" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="openingDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="qualified" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scheduleDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedulingPartialDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedulingPartialId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfQualification" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="typeScore" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="ActivityFiles" representedClassName="ActivityFiles" syncable="YES" codeGenerationType="class">
+        <attribute name="fileDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="ClassFiles" representedClassName="ClassFiles" syncable="YES" codeGenerationType="class">
+        <attribute name="classId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fileDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="ContentFiles" representedClassName="ContentFiles" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentResourceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentTypeDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fileDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileTypeDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="formativeField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isPublic" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isRecommended" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="purpose" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purposeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="registerDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trainingField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visits" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Conversations" representedClassName="Conversations" syncable="YES" codeGenerationType="class">
+        <attribute name="chatGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastMessage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastMessageDateString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="receiverAvatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiverEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiverUserId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="receiverUserName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Courses" representedClassName="Courses" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="courseDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="goal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="node" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="professorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="registerDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saturday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sunday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="ExamSchedules" representedClassName="ExamSchedules" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="applicationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="courseId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="examScheduleTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="registerDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scheduleActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scheduleDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scheduleExamDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scheduleRegDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scheduleTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scheduleUpdDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="teacherExamId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Messages" representedClassName="Messages" syncable="YES" codeGenerationType="class">
+        <attribute name="chatGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageSequence" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="receiverAvatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiverName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderAvatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderDateString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderUserName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Nodes" representedClassName="Nodes" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="book" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="depth" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isPublic" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeAccessTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nodeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numericalMapping" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pathIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="system" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalContent" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Partials" representedClassName="Partials" syncable="YES" codeGenerationType="class">
+        <attribute name="coursePlanningId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="endDateString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="partialDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDateString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Permissions" representedClassName="Permissions" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Planning" representedClassName="Planning" syncable="YES" codeGenerationType="class">
+        <attribute name="activity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assistance" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="exam" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="homework" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="partialQuantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Scores" representedClassName="Scores" syncable="YES" codeGenerationType="class">
+        <attribute name="activity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exam" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="homework" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="registerDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="schedulingPartial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedulingPartialId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="student" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="SectionClasses" representedClassName="SectionClasses" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="courseSection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="courseSectionId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Sections" representedClassName="Sections" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="course" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="courseId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="TaskFiles" representedClassName="TaskFiles" syncable="YES" codeGenerationType="class">
+        <attribute name="fileDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tasks" representedClassName="Tasks" syncable="YES" codeGenerationType="class">
+        <attribute name="addNewAnswers" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assignedQualification" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="delivered" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fileFound" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="openingDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="qualified" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scheduleDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedulingPartialDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedulingPartialId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentGroupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfQualification" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="typeScore" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="UserTopics" representedClassName="UserTopics" syncable="YES" codeGenerationType="class">
+        <attribute name="topicName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activities" positionX="-229.640625" positionY="74.4765625" width="128" height="300"/>
+        <element name="ActivityFiles" positionX="-231.82421875" positionY="138.41796875" width="128" height="118"/>
+        <element name="ClassFiles" positionX="-9" positionY="180" width="128" height="30"/>
+        <element name="ContentFiles" positionX="-36" positionY="135" width="128" height="360"/>
+        <element name="Conversations" positionX="-54" positionY="126" width="128" height="180"/>
+        <element name="Courses" positionX="-45" positionY="135" width="128" height="390"/>
+        <element name="ExamSchedules" positionX="-36" positionY="144" width="128" height="285"/>
+        <element name="Messages" positionX="-36" positionY="144" width="128" height="210"/>
+        <element name="Nodes" positionX="-63" positionY="-18" width="128" height="315"/>
+        <element name="Partials" positionX="-36" positionY="135" width="128" height="30"/>
+        <element name="Permissions" positionX="-117" positionY="135" width="128" height="60"/>
+        <element name="Planning" positionX="-36" positionY="135" width="128" height="150"/>
+        <element name="Scores" positionX="-117" positionY="135" width="128" height="315"/>
+        <element name="SectionClasses" positionX="-18" positionY="171" width="128" height="30"/>
+        <element name="Sections" positionX="-27" positionY="162" width="128" height="30"/>
+        <element name="TaskFiles" positionX="-36" positionY="135" width="128" height="120"/>
+        <element name="Tasks" positionX="-27" positionY="144" width="128" height="300"/>
+        <element name="UserTopics" positionX="-63" positionY="117" width="128" height="60"/>
+    </elements>
+</model>
