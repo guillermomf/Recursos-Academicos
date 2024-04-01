@@ -64,6 +64,21 @@
                   endingLineNumber = "280"
                   offsetFromSymbolStart = "892">
                </Location>
+               <Location
+                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 32ce923966c980d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  moduleName = "Recursos Academicos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos-Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "280"
+                  endingLineNumber = "280"
+                  offsetFromSymbolStart = "892">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
