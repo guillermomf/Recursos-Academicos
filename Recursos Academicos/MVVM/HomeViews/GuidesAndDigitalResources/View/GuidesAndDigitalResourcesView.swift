@@ -12,8 +12,6 @@ struct GuidesAndDigitalResourcesView: View {
     @StateObject var viewModel: GuidesAndDigitalResourcesViewModel = GuidesAndDigitalResourcesViewModel()
     //TODO: Delete arrays
     @State var options: [String] = ["Imprimibles", "Videos", "Audios" , "Libros de texto", "Guías", "Libros de texto digital", "Interactivo"]
-    @State var nodeList = ["Secundaria", "Primaria", "Preescolar", "Ingles ELT"]
-    @State var isSelected: Int = 0
     @State var levelSelected: String = "Secundaria" //self.nodeList.first ?? ""
     var body: some View {
         ScrollView{
@@ -21,25 +19,25 @@ struct GuidesAndDigitalResourcesView: View {
                 NavigationBarCustomTwoLines(title: "Guías del maestro y recursos digitales")
                 ScrollView(.horizontal){
                     LazyHGrid(rows: columns, content: {
-                        ForEach(nodeList.indices, id: \.self) { item in
+                        ForEach(viewModel.nodeList.indices, id: \.self) { item in
                             Button(action: {
-                                levelSelected = nodeList[item]
-                                isSelected = item
+                                levelSelected = viewModel.nodeList[item]
+                                viewModel.isSelected = item
                                 //                            viewModel.loadResources(nodeId: viewModel.idNode)
                             }, label: {
                                 VStack{
-                                    Image(viewModel.getImage(name: nodeList[item]))
+                                    Image(viewModel.getImage(name: viewModel.nodeList[item]))
                                         .resizable()
                                         .frame(width: 45, height: 45)
                                         .background(
                                             RoundedRectangle(cornerRadius: 12)
-                                                .strokeBorder(isSelected == item ? Color.orange : Color.clear, lineWidth: 2)
+                                                .strokeBorder(viewModel.isSelected == item ? Color.orange : Color.clear, lineWidth: 2)
                                                 .frame(width: 69, height: 69)
                                                 .background(Color.white.cornerRadius(12))
                                         )
-                                    Text(nodeList[item])
+                                    Text(viewModel.nodeList[item])
                                         .foregroundColor(Color.init(hex: "#004C98"))
-                                        .customFont(fontKey: isSelected == item ? .robotoBold : .robotoregular, size: 12)
+                                        .customFont(fontKey: viewModel.isSelected == item ? .robotoBold : .robotoregular, size: 12)
                                         .padding(.top)
                                 }.padding(.trailing)
                             })

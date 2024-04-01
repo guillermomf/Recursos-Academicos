@@ -10,12 +10,6 @@ import WebKit
 import PDFKit
 
 struct LoginView: View {
-    @State var user: String = String()
-    @State var password: String = String()
-    @State var showPassword: Bool = false
-    @State var showPrivacityNotice: Bool = false
-    @State var showLoader: Bool = false
-    
     @StateObject private var viewModel: LoginViewModel = LoginViewModel()
     
     var body: some View {
@@ -27,8 +21,8 @@ struct LoginView: View {
                     .padding()
                     .padding(.bottom, 119)
                 //TextField Usuario
-                TextField("Usuario", text: $user) {_ in
-                    print(user)
+                TextField("Usuario", text: $viewModel.user) {_ in
+                    print(viewModel.user)
                 }
                 .customFont(fontKey: .robotoregular, size: 16)
                 .foregroundColor(Color.init(hex: "#404547"))
@@ -39,16 +33,16 @@ struct LoginView: View {
                 
                 //TextField Password
                 VStack(spacing: 10){
-                    if !showPassword {
+                    if !viewModel.showPassword {
                         HStack {
-                            SecureField("Contraseña", text: $password)
-                                .onChange(of: password, perform: {_ in
-                                    print(password)
+                            SecureField("Contraseña", text: $viewModel.password)
+                                .onChange(of: viewModel.password, perform: {_ in
+                                    print(viewModel.password)
                                 })
                                 .customFont(fontKey: .robotoregular, size: 16)
                                 .foregroundColor(Color.init(hex: "#404547"))
                             Button(action: {
-                                showPassword.toggle()
+                                viewModel.showPassword.toggle()
                             }, label: {
                                 Image(systemName: "eye")
                                     .foregroundColor(Color.init(hex: "#C6C6C6"))
@@ -60,13 +54,13 @@ struct LoginView: View {
                         .cornerRadius(25)
                     } else {
                         HStack{
-                            TextField("Contraseña", text: $password, onEditingChanged: {_ in
-                                print(password)
+                            TextField("Contraseña", text: $viewModel.password, onEditingChanged: {_ in
+                                print(viewModel.password)
                             })
                             .customFont(fontKey: .robotoregular, size: 16)
                             .foregroundColor(Color.init(hex: "#404547"))
                             Button(action: {
-                                showPassword.toggle()
+                                viewModel.showPassword.toggle()
                             }, label: {
                                 Image(systemName: "eye.slash")
                                     .foregroundColor(Color.init(hex: "#C6C6C6"))
@@ -78,11 +72,10 @@ struct LoginView: View {
                         .background(Color.init(hex: "#EFEFEF"))
                         .cornerRadius(25)
                     }
-                    
                     Button(action: {
-                        showLoader = true
+                        viewModel.showLoader = true
                         viewModel.isLoading = true
-                        //                        viewModel.userLogIn(username: user, password: password)
+                        //                        viewModel.userLogIn(username: viewModel.user, password: viewModel.password)
                         viewModel.userLogIn(username: "recursosacademicosra@gmail.com", password: "portal19")
                         //                        viewModel.userLogIn(username: "vacosta@larousse.com.mx", password: "raAdmin08@")
                         print("Button Action")
@@ -97,12 +90,10 @@ struct LoginView: View {
                         }
                         .padding(.horizontal, 20)
                     })
-                    
                     .frame(width: 335, height: 50)
                     .background(Color.init(hex: "#23294C"))
                     .cornerRadius(25)
                     .foregroundColor(.white)
-                    
                     //                    Button(action: {
                     //                        print("Button Recupera")
                     //                    }, label: {
@@ -111,7 +102,6 @@ struct LoginView: View {
                     //                            .foregroundColor(Color.init(hex: "#404547"))
                     //                            .customFont(fontKey: .robotoMedium, size: 14)
                     //                    })
-                    //
                 }//VStack Password
                 .padding(.bottom, 93)
                 VStack{
@@ -119,22 +109,21 @@ struct LoginView: View {
                 }.padding(.bottom, 30)
                 
                 Button(action: {
-                    showPrivacityNotice.toggle()
+                    viewModel.showPrivacityNotice.toggle()
                 }, label: {
                     Text("Aviso de privaciad")
                         .foregroundColor(Color.init(hex: "#404547"))
                         .customFont(fontKey: .robotoregular, size: 14)
                 })
             }//VStack
-            
         }//Scroll
         .background(Color.white)
         .padding(20)
-        .sheet(isPresented: $showPrivacityNotice, content: {
+        .sheet(isPresented: $viewModel.showPrivacityNotice, content: {
             PrivacityNotice()
         })
         .overlay{
-            if showLoader {
+            if viewModel.showLoader {
                 VStack{
                     Arcs(isAnimating: $viewModel.isLoading, count: 4, width: 50, spacing: 10)
                         .frame(width: 200, height: 200)

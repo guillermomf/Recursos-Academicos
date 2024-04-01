@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AcademicManagementDocumentsView: View {
     @StateObject var viewModel: AcademicManagementDocumentsViewModel = AcademicManagementDocumentsViewModel()
-    @State var isSelected: Int = 0
     
     var body: some View {
         VStack{
@@ -18,7 +17,7 @@ struct AcademicManagementDocumentsView: View {
                 LazyHGrid(rows: viewModel.columns, content: {
                     ForEach(viewModel.nodeList.indices, id: \.self) { item in
                         Button(action: {
-                            isSelected = item
+                            viewModel.isSelected = item
                             viewModel.idNode = viewModel.nodeList[item].id
                             print(viewModel.idNode)
 //                            viewModel.loadResources(nodeId: viewModel.idNode)
@@ -29,7 +28,7 @@ struct AcademicManagementDocumentsView: View {
                                     .frame(width: 45, height: 45)
                                     .background(
                                         RoundedRectangle(cornerRadius: 12)
-                                            .strokeBorder(isSelected == item ? Color.orange : Color.clear, lineWidth: 2)
+                                            .strokeBorder(viewModel.isSelected == item ? Color.orange : Color.clear, lineWidth: 2)
                                             .frame(width: 69, height: 69)
                                             .background(Color.white.cornerRadius(12))
                                     )

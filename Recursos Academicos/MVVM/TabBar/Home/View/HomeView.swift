@@ -10,9 +10,7 @@ import SwiftUI
 struct HomeView: View {
     //Variables
     @StateObject var viewModel: HomeViewModel = HomeViewModel()
-    @State var nameView: String = String()
-    @State var trus: Bool = false
-    
+
     var body: some View {
         ScrollView{
             VStack{

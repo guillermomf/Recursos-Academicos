@@ -11,6 +11,9 @@ class GuidesAndDigitalResourcesViewModel: ObservableObject {
     @Published var textToSearch: String = String()
     @Published var video: Videos = .init(id: Int(), image: String(), duration: Int(), user: Videos.User(id: Int(), name: String(), url: String()), videoFiles: [])
     @Published var showItemSelectd: Bool = Bool()
+    @Published var nodeList = ["Secundaria", "Primaria", "Preescolar", "Ingles ELT"]
+    @Published var isSelected: Int = 0
+    @Published var isDownLoadTrue: Bool = Bool()
     ///funntion that get the icon image un our grid
     ///
     /// - Parameters:

@@ -12,6 +12,10 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var availableResources : [String] = []
     @Published var resourcesEmpty: Bool = Bool()
+    //TODO: Check tghis two variables
+    @Published var nameView: String = String()
+    @Published var trus: Bool = false
+    
     var availableOptions : [String] = ["Guías del maestro y recursos digitales", "Documentos de gestión académica", "Serie de Inglés - Help!", "Servicios pedagógicos", "Sitios de interés recomendados", "Aplicaciones recomendadas", "Libros de texto en PDF", "Libros de texto digital"]
     
     
@@ -80,10 +84,11 @@ class HomeViewModel: ObservableObject {
                 PDFBuilderView(resourceName: "Aplicaciones recomendadas", resourceTitle: "Ligas_software_gratuito")
             }
         case "Libros de texto en PDF":
-//            PDFTextbooksView()
+            PDFTextbooksView()
 //            EnglishSeriesHelpView()
-            GuidesAndDigitalResourcesView()
-            //        case "Libros de texto digital":
+//            GuidesAndDigitalResourcesView()
+
+//        case "Libros de texto digital":
             
         case "Serie de Inglés - Help!":
             EnglishSeriesHelpView() 

@@ -12,7 +12,7 @@ struct VideoHelperItemSeleted: View {
     @StateObject var vm: DownloadViewModel = .init()
     @State var title: String
     @State var video: Videos
-    @State var isDownLoadTrue: Bool = Bool()
+    
     var body: some View {
         ScrollView{
             VStack{
@@ -51,6 +51,7 @@ struct VideoHelperItemSeleted: View {
                             .cornerRadius(50)
                     }
                 })
+                //viewModel.isDownLoadTrue
                 downLoadToSeeOfflineComponent(title: "Descargar para ver Offline\(vm.progress)", isActiveDownLoad: vm.isDowloadLoading)
                     .padding(.vertical, 10)
                     .onTapGesture {

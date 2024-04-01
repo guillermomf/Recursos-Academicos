@@ -13,6 +13,11 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     @Published var goToTabBar: Bool = false
     @Published var isLoading: Bool = false
+    @Published var user: String = String()
+    @Published var password: String = String()
+    @Published var showPassword: Bool = false
+    @Published var showPrivacityNotice: Bool = false
+    @Published var showLoader: Bool = false
     
     /// Función que realiza el inicio de sesión del usuario movil en el sistema
     ///

@@ -562,7 +562,6 @@
 				7EB419752B9BD48C00F43AAF /* AcademicManagementDocuments */,
 				7EB4197B2B9BD55400F43AAF /* EnglishSeriesHelp */,
 				7EB419792B9BD50900F43AAF /* PDFTextbooks */,
-				7EB4197A2B9BD52000F43AAF /* DigitalTextbooks */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -591,13 +590,6 @@
 				7EB419822B9BF97500F43AAF /* PDFTextbooksView.swift */,
 			);
 			path = PDFTextbooks;
-			sourceTree = "<group>";
-		};
-		7EB4197A2B9BD52000F43AAF /* DigitalTextbooks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DigitalTextbooks;
 			sourceTree = "<group>";
 		};
 		7EB4197B2B9BD55400F43AAF /* EnglishSeriesHelp */ = {

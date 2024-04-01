@@ -15,6 +15,7 @@ class AcademicManagementDocumentsViewModel: ObservableObject {
     @Published var fileList : [ModelContentFile] = []
     @Published var idNode: Int = Int()
     @Published var isActiveBool: Bool = Bool()
+    @Published var isSelected: Int = 0
     let columns = [GridItem(.fixed(10))]
     
     func loadResources(nodeId: Int){
