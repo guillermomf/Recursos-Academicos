@@ -277,7 +277,6 @@
 				7E4DEBCA2BA04160008DBADD /* Messages */,
 				7E4DEBCB2BA04170008DBADD /* Help */,
 				7E4DEBCC2BA04194008DBADD /* PrivacityNotice */,
-				7E4DEBCD2BA0419D008DBADD /* LogOut */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -341,13 +340,6 @@
 				7E4DEBCE2BA0421F008DBADD /* PrivacityNoticeView.swift */,
 			);
 			path = PrivacityNotice;
-			sourceTree = "<group>";
-		};
-		7E4DEBCD2BA0419D008DBADD /* LogOut */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LogOut;
 			sourceTree = "<group>";
 		};
 		7E4DEBD22BA10F77008DBADD /* View */ = {
@@ -429,6 +421,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7E7580842BBB9E0600DC578F /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
 		7EB419382B9A57F300F43AAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,7 +457,8 @@
 			children = (
 				7EB4193E2B9A725700F43AAF /* Login */,
 				7EB419642B9BA74600F43AAF /* TabBar */,
-				7EB419732B9BD35600F43AAF /* HomeViews */,
+				7EB419732B9BD35600F43AAF /* Home */,
+				7E7580842BBB9E0600DC578F /* Courses */,
 				7E4DEBC12BA022A0008DBADD /* Account */,
 			);
 			path = MVVM;
@@ -554,7 +554,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7EB419732B9BD35600F43AAF /* HomeViews */ = {
+		7EB419732B9BD35600F43AAF /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				7EDB965F2BA3AF90003E84C1 /* PDFBuilder */,
@@ -563,7 +563,7 @@
 				7EB4197B2B9BD55400F43AAF /* EnglishSeriesHelp */,
 				7EB419792B9BD50900F43AAF /* PDFTextbooks */,
 			);
-			path = HomeViews;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		7EB419742B9BD36400F43AAF /* GuidesAndDigitalResources */ = {
