@@ -32,7 +32,7 @@ struct GuidesAndResoucesItemSelectedView: View {
                     Spacer()
                 }
                 .padding(.vertical)
-                SearchBarCustom(textToSearch: viewModel.textToSearch)
+                SearchBarCustomWithFilter(textToSearch: viewModel.textToSearch)
                     .padding(.bottom)
                 if itemSelected == "Guías" || itemSelected == "Libros de texto" || itemSelected ==  "Imprimibles" {
                     ForEach(options, id:\.self){ item in

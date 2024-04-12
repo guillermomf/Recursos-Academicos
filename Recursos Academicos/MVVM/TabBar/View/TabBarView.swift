@@ -21,7 +21,10 @@ struct TabBarView: View {
                 Text("Inicio")
             })
             
-            Text("Cursos")
+            NavigationView{
+                CoursesHomeView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
             //TODO: Check asset of courses
                 .tabItem({
                     Image("icon-home")
