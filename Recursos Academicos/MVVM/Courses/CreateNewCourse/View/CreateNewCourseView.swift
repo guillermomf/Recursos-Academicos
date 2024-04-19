@@ -8,42 +8,63 @@
 import SwiftUI
 
 struct CreateNewCourseView: View {
-    @State var text: String = String()
+    
     @State var optionArray: [String] = ["primaria" ,"secundaria", "preescolar"]
-    @State var isSelected: Bool = false
+    //Info to send
+    @State var textCourseName: String = String()
+    @State var textInstitution: String = String()
+    @State var textTopic: String = String()
+    @State var textDescription: String = String()
+    @State var textObjetive: String = String()
+    @State var showAcademicLevelOptions: Bool = false
+    @State var showGradeoptions: Bool = false
+    @State var showDayOfWeekOptions: Bool = false
+    @State var academicLevelSelected: String = "Nivel académico"
+    @State var gradeSelected: String = "Grado"
+    @State var showDayOfWeekSelected: String = "Días de la semana"
+    @State var startDateText: String = "Fecha inicio"
+    @State var startDateSelected: Date = Date()
+    @State var endDateText: String = "Fecha termino"
+    @State var endDateSelected: Date = Date()
+    
+        @State var showDatePicker = false
+       
+
     var body: some View {
         ScrollView {
             VStack{
                 NavigationBarCustom(title: "Crear nuevo curso")
                     .padding(.vertical, 30)
                 VStack(spacing: 10){
-                    TextFieldCustom(text: text, placeHolder: "Nombre del curso")
-                    TextFieldCustom(text: text, placeHolder: "Institución")
-                    TextFieldCustom(text: text, placeHolder: "Materia relacionada")
-                    TextFieldCustom(text: text, placeHolder: "Descripción")
-                    TextFieldCustom(text: text, placeHolder: "Objetivo")
+                    TextFieldCustom(text: $textCourseName, placeHolder: "Nombre del curso")
+                        .onChange(of: textCourseName, perform: {
+                            _ in
+                            print(textCourseName)
+                        })
+                    TextFieldCustom(text: $textInstitution, placeHolder: "Institución")
+                    TextFieldCustom(text: $textTopic, placeHolder: "Materia relacionada")
+                    TextFieldCustom(text: $textDescription, placeHolder: "Descripción")
+                    TextFieldCustom(text: $textObjetive, placeHolder: "Objetivo")
                 }.padding(.horizontal, 1)
                     .padding(.bottom, 10)
                 VStack(spacing: 10){
                     InteractiveFieldCustom(actionButton: {
                         print("Nivel académico")
-                    },name: "Nivel académico", imageName: "chevron.down", optionArray: optionArray, isSelected: isSelected)
+                        showAcademicLevelOptions.toggle()
+                    },name: $academicLevelSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showAcademicLevelOptions)
                     
                     InteractiveFieldCustom(actionButton: {
                         print("Grado")
-                    },name: "Grado", imageName: "chevron.down", optionArray: optionArray, isSelected: isSelected)
+                        showGradeoptions.toggle()
+                    },name: $gradeSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showGradeoptions)
                     
-                    CalendarFieldCustom(actionButton: {
-                        print("Fecha inicio")
-                    }, name: "Fecha inicio")
-                    
-                    CalendarFieldCustom(actionButton: {
-                        print("Fecha termino")
-                    }, name: "Fecha termino")
+                    CalendarFieldCustom(name: $startDateText, date: $startDateSelected)
+                    CalendarFieldCustom(name:$endDateText, date: $endDateSelected)
                     
                     InteractiveFieldCustom(actionButton: {
                         print("Días de la semana")
-                    },name: "Días de la semana", imageName: "chevron.down", optionArray: optionArray, isSelected: isSelected)
+                        showDayOfWeekOptions.toggle()
+                    },name: $showDayOfWeekSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showDayOfWeekOptions)
                 }.padding(.horizontal, 1)
                 HStack{
                     Button(action: {
@@ -55,7 +76,7 @@ struct CreateNewCourseView: View {
                     })
                     Spacer()
                     Button(action: {
-                        //Action
+                        print("\(textCourseName), \(textInstitution), \(textTopic), \(textDescription), \(textObjetive), \(academicLevelSelected), \(gradeSelected), \(showDayOfWeekSelected), \(startDateSelected), \(startDateSelected)")
                     }, label: {
                         ButtonGradientCustom(title: "Guardar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
                             .foregroundStyle(Color.init(hex: "#FFFFFF")!)
@@ -72,3 +93,4 @@ struct CreateNewCourseView: View {
 #Preview {
     CreateNewCourseView()
 }
+

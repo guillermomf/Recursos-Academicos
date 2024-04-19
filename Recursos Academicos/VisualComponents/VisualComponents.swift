@@ -258,7 +258,7 @@ struct SearchBarCustom: View {
 ///  - text: text
 ///
 struct TextFieldCustom: View {
-    @State var text: String
+    @Binding var text: String
     @State var placeHolder: String
     var body: some View{
         VStack{
@@ -282,10 +282,11 @@ struct TextFieldCustom: View {
 ///  - isSelected: bool to know if show the options
 struct InteractiveFieldCustom: View {
     @State var actionButton: () -> Void
-    @State var name: String
+    @Binding var name: String
     @State var imageName: String
     @State var optionArray: [String]
-    @State var isSelected: Bool
+    @Binding var isSelected: Bool
+    @State var picker: String = String()
     var body: some View{
         VStack {
             HStack{
@@ -306,6 +307,10 @@ struct InteractiveFieldCustom: View {
                             Text(index)
                             Spacer()
                         }
+                        .onTapGesture{
+                            name = index
+                            isSelected.toggle()
+                        }
                     }
                 }.padding()
             }
@@ -315,18 +320,23 @@ struct InteractiveFieldCustom: View {
                 .foregroundStyle(Color.white)
         )
         .onTapGesture {
-            isSelected.toggle()
             actionButton()
         }
     }
 }
 
+///
+/// Calendar picker custom
+/// - Parameters:
+///  - name: This will be the placeholder and the date that you want. String type
+///  - date: The date select to show and send. Date type
+///
 struct CalendarFieldCustom: View {
-    @State var actionButton: () -> Void
-    @State var name: String
+    @Binding var name: String
+    @Binding var date: Date
     var body: some View{
         HStack{
-            Text(name)
+            TextField("", text: $name)
                 .customFont(fontKey: .robotoregular, size: 17)
                 .foregroundStyle(Color.init(hex: "#444444")!)
             Spacer()
@@ -343,8 +353,16 @@ struct CalendarFieldCustom: View {
                     .border(Color.init(hex: "#E9E9ED")!, width: 1, cornerRadius: 15)
                     .foregroundStyle(Color.white)
             )
-            .onTapGesture {
-                actionButton()
+            .overlay{
+                DatePicker(
+                    "",
+                    selection: $date,
+                    displayedComponents: [.date]
+                )
+                .blendMode(.destinationOver)
+                .onChange(of: date, perform: {_ in
+                    name = formatDateToString(date: date, format: "yyyy-MM-dd")
+                })
             }
     }
 }
@@ -358,6 +376,6 @@ struct VisualComponents_Previews: PreviewProvider {
         //        NavigationBarCustomTwoLines(title: "hola\n hola")
         //        SearchBarCustom(textToSearch: String())
         //        TextFieldCustom(text: "", placeHolder: "Write here")
-        InteractiveFieldCustom(actionButton: {print("hola")}, name: "Hola", imageName: "chevron.down", optionArray: ["hola", "adios"], isSelected: true)
+        InteractiveFieldCustom(actionButton: {print("hola")}, name: .constant("Hola"), imageName: "chevron.down", optionArray: ["hola", "adios"], isSelected: .constant(true))
     }
 }

@@ -27,3 +27,16 @@ func dateFormatterHelper(date: Date) -> String {
     
     return finalDate
 }
+
+/// Convierte una fecha en una cadena formateada.
+/// - Parameters:
+///   - date: La fecha a convertir.
+///   - format: El formato de salida deseado.
+///   - localeIdentifier: El identificador de localización opcional (por defecto es "es_ES").
+/// - Returns: Una cadena representando la fecha en el formato especificado.
+func formatDateToString(date: Date, format: String, localeIdentifier: String = "es_ES") -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    dateFormatter.locale = Locale(identifier: localeIdentifier)
+    return dateFormatter.string(from: date)
+}
