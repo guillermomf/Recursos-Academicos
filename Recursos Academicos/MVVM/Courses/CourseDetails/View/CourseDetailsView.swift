@@ -73,7 +73,24 @@ struct CourseDetailsView: View {
             VStack{
                 TextFieldCustom(text: $addNameGruop, placeHolder: "Nombre del grupo")
                 TextFieldCustom(text: $addPasswordGruop, placeHolder: "Contraseña")
-            }
+                HStack{
+                    Button(action: {
+                        //Action
+                    }, label: {
+                        ButtonGradientCustom(title: "Cancelar", colorOne: "#EDEDED", colorTwo: "#EDEDED", width: 170, height: 50)
+                            .foregroundStyle(Color.init(hex: "#252B33")!)
+                            .customFont(fontKey: .robotoregular, size: 16)
+                    })
+                    Spacer()
+                    Button(action: {
+                        //Action
+                    }, label: {
+                        ButtonGradientCustom(title: "Guardar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 170, height: 50)
+                            .foregroundStyle(Color.init(hex: "#FFFFFF")!)
+                            .customFont(fontKey: .robotoregular, size: 16)
+                    })
+                }.padding(.vertical)
+            }.padding(.horizontal)
         }
     }
 }
