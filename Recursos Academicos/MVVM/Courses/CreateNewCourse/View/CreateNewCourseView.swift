@@ -9,62 +9,44 @@ import SwiftUI
 
 struct CreateNewCourseView: View {
     
+    @StateObject var viewModel: CreateNewCourseViewModel = CreateNewCourseViewModel()
     @State var optionArray: [String] = ["primaria" ,"secundaria", "preescolar"]
-    //Info to send
-    @State var textCourseName: String = String()
-    @State var textInstitution: String = String()
-    @State var textTopic: String = String()
-    @State var textDescription: String = String()
-    @State var textObjetive: String = String()
-    @State var showAcademicLevelOptions: Bool = false
-    @State var showGradeoptions: Bool = false
-    @State var showDayOfWeekOptions: Bool = false
-    @State var academicLevelSelected: String = "Nivel académico"
-    @State var gradeSelected: String = "Grado"
-    @State var showDayOfWeekSelected: String = "Días de la semana"
-    @State var startDateText: String = "Fecha inicio"
-    @State var startDateSelected: Date = Date()
-    @State var endDateText: String = "Fecha termino"
-    @State var endDateSelected: Date = Date()
     
-        @State var showDatePicker = false
-       
-
     var body: some View {
         ScrollView {
             VStack{
                 NavigationBarCustom(title: "Crear nuevo curso")
                     .padding(.vertical, 30)
                 VStack(spacing: 10){
-                    TextFieldCustom(text: $textCourseName, placeHolder: "Nombre del curso")
-                        .onChange(of: textCourseName, perform: {
+                    TextFieldCustom(text: $viewModel.textCourseName, placeHolder: "Nombre del curso")
+                        .onChange(of: viewModel.textCourseName, perform: {
                             _ in
-                            print(textCourseName)
+                            print(viewModel.textCourseName)
                         })
-                    TextFieldCustom(text: $textInstitution, placeHolder: "Institución")
-                    TextFieldCustom(text: $textTopic, placeHolder: "Materia relacionada")
-                    TextFieldCustom(text: $textDescription, placeHolder: "Descripción")
-                    TextFieldCustom(text: $textObjetive, placeHolder: "Objetivo")
+                    TextFieldCustom(text: $viewModel.textInstitution, placeHolder: "Institución")
+                    TextFieldCustom(text: $viewModel.textTopic, placeHolder: "Materia relacionada")
+                    TextFieldCustom(text: $viewModel.textDescription, placeHolder: "Descripción")
+                    TextFieldCustom(text: $viewModel.textObjetive, placeHolder: "Objetivo")
                 }.padding(.horizontal, 1)
                     .padding(.bottom, 10)
                 VStack(spacing: 10){
                     InteractiveFieldCustom(actionButton: {
                         print("Nivel académico")
-                        showAcademicLevelOptions.toggle()
-                    },name: $academicLevelSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showAcademicLevelOptions)
+                        viewModel.showAcademicLevelOptions.toggle()
+                    },name: $viewModel.academicLevelSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $viewModel.showAcademicLevelOptions)
                     
                     InteractiveFieldCustom(actionButton: {
                         print("Grado")
-                        showGradeoptions.toggle()
-                    },name: $gradeSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showGradeoptions)
+                        viewModel.showGradeoptions.toggle()
+                    },name: $viewModel.gradeSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $viewModel.showGradeoptions)
                     
-                    CalendarFieldCustom(name: $startDateText, date: $startDateSelected)
-                    CalendarFieldCustom(name:$endDateText, date: $endDateSelected)
+                    CalendarFieldCustom(name: $viewModel.startDateText, date: $viewModel.startDateSelected)
+                    CalendarFieldCustom(name:$viewModel.endDateText, date: $viewModel.endDateSelected)
                     
                     InteractiveFieldCustom(actionButton: {
                         print("Días de la semana")
-                        showDayOfWeekOptions.toggle()
-                    },name: $showDayOfWeekSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $showDayOfWeekOptions)
+                        viewModel.showDayOfWeekOptions.toggle()
+                    },name: $viewModel.showDayOfWeekSelected, imageName: "chevron.down", optionArray: optionArray, isSelected: $viewModel.showDayOfWeekOptions)
                 }.padding(.horizontal, 1)
                 HStack{
                     Button(action: {
@@ -76,7 +58,7 @@ struct CreateNewCourseView: View {
                     })
                     Spacer()
                     Button(action: {
-                        print("\(textCourseName), \(textInstitution), \(textTopic), \(textDescription), \(textObjetive), \(academicLevelSelected), \(gradeSelected), \(showDayOfWeekSelected), \(startDateSelected), \(startDateSelected)")
+                        print("\(viewModel.textCourseName), \(viewModel.textInstitution), \(viewModel.textTopic), \(viewModel.textDescription), \(viewModel.textObjetive), \(viewModel.academicLevelSelected), \(viewModel.gradeSelected), \(viewModel.showDayOfWeekSelected), \(viewModel.startDateSelected), \(viewModel.endDateSelected)")
                     }, label: {
                         ButtonGradientCustom(title: "Guardar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
                             .foregroundStyle(Color.init(hex: "#FFFFFF")!)
@@ -93,4 +75,3 @@ struct CreateNewCourseView: View {
 #Preview {
     CreateNewCourseView()
 }
-

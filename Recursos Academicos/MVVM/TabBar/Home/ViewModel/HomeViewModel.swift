@@ -61,8 +61,8 @@ class HomeViewModel: ObservableObject {
     @ViewBuilder
     func goToViewSelected(name: String) -> some View {
         switch name {
-            //        case "Guías del maestro y recursos digitales":
-            
+        case "Guías del maestro y recursos digitales":
+            GuidesAndDigitalResourcesView()
         case "Documentos de gestión académica":
             AcademicManagementDocumentsView()
         case "Servicios pedagógicos":
@@ -85,11 +85,10 @@ class HomeViewModel: ObservableObject {
             }
         case "Libros de texto en PDF":
             PDFTextbooksView()
-//            EnglishSeriesHelpView()
 //            GuidesAndDigitalResourcesView()
-
-//        case "Libros de texto digital":
-            
+//            EnglishSeriesHelpView()
+        case "Libros de texto digital":
+            EnglishSeriesHelpView()
         case "Serie de Inglés - Help!":
             EnglishSeriesHelpView() 
         default:

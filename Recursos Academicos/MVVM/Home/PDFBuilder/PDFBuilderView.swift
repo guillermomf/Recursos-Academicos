@@ -25,6 +25,7 @@ struct PDFBuilderView: View {
                 if let url = Bundle.main.url(forResource: resourceTitle, withExtension: "pdf") {
                     PDFKitRepresentedView(url)
                         .padding(.horizontal)
+                        .padding(.bottom, 40)
                         .background(Color.init(hex: "#F4F4F4"))
                         .ignoresSafeArea(.all)
                 } else {

@@ -14,8 +14,9 @@ struct Recursos_AcademicosApp: App {
 //    let context = MyPersistentContainer.persistentContainer.viewContext
     var body: some Scene {
         WindowGroup {
-//                LoginView()
-            CreateNewCourseView()
+            LoginView()
+//            CreateNewCourseView()
+//            CoursesHomeView()
 //                    .environment(\.managedObjectContext, context)
         }
     }

@@ -75,9 +75,9 @@ struct LoginView: View {
                     Button(action: {
                         viewModel.showLoader = true
                         viewModel.isLoading = true
-                        //                        viewModel.userLogIn(username: viewModel.user, password: viewModel.password)
-                        viewModel.userLogIn(username: "recursosacademicosra@gmail.com", password: "portal19")
-                        //                        viewModel.userLogIn(username: "vacosta@larousse.com.mx", password: "raAdmin08@")
+//                        viewModel.userLogIn(username: viewModel.user, password: viewModel.password)
+//                        viewModel.userLogIn(username: "recursosacademicosra@gmail.com", password: "portal19")
+                          viewModel.userLogIn(username: "vacosta@larousse.com.mx", password: "raAdmin08@")
                         print("Button Action")
                     }, label: {
                         HStack{

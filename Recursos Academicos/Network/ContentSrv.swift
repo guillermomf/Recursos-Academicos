@@ -180,8 +180,10 @@ class ContentSrv {
     
     /// - Parameter success: Tupla que retorna el resultado de la consulta y el listado de nodos recuperados de la BD local
     func getStoredPermissions(success: @escaping(Bool, [String]) -> Void) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = DataController.shared.container.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Permissions")
+        
         
         var permissionList : [String] = []
         
@@ -202,7 +204,8 @@ class ContentSrv {
     
     /// Metódo que vacia los nodos almacenados en la BD del dispositivo
     func deleteStoredPermissions() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = DataController.shared.container.viewContext
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Permissions")
         let request = NSBatchDeleteRequest(fetchRequest: fetch)
         
@@ -489,7 +492,8 @@ class ContentSrv {
         var result : Bool = true
         for Node in Nodes {
             
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let context = DataController.shared.container.viewContext
             let entity = NSEntityDescription.entity(forEntityName: "ContentFiles", in: context)
             let newNodeEntry = NSManagedObject(entity: entity!, insertInto: context)
             
@@ -526,7 +530,8 @@ class ContentSrv {
     
     /// Metódo que vacia los nodos almacenados en la BD del dispositivo
     func deleteStoredFileNodes(parentId : Int) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = DataController.shared.container.viewContext
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ContentFiles")
         fetch.predicate = NSPredicate(format: "parentId = %@", parentId.description)
         let request = NSBatchDeleteRequest(fetchRequest: fetch)

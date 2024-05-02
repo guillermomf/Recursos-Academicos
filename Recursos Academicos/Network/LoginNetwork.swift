@@ -23,71 +23,116 @@ class SecuritySrv: ObservableObject {
     ///   - user: Nombre de usuario
     ///   - password: Contraseña
     ///   - result: Resultado del servicio web un booleano representativo del suceso la operación y un string en caso de existir mensajes de error en el resultado de la petición
-    func requestAccessToken (user: String, password: String, result: @escaping(Bool, String?) -> Void) {
-        
+    ///   import Foundation
+    
+
+    func requestAccessToken(user: String, password: String, completion: @escaping (Bool, String?) -> Void) {
         let url = Settings.tokenUrl
-        
-        let parameters = "grant_type=password&username=\(user)&password=\(password)&origen_id=2"
-        
+
         var request = URLRequest(url: url)
-        
         request.httpMethod = "POST"
+        let parameters = "grant_type=password&username=\(user)&password=\(password)&origen_id=2"
         request.httpBody = parameters.data(using: .utf8)
-        request.setValue("x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            
-            guard error == nil else {
-                result(false, "Error al contactar con el servidor, revise su conexión a internet o intente de nuevo mas tarde")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(false, error?.localizedDescription ?? "Error al contactar con el servidor")
                 return
             }
-            
-            guard let data = data else {
-                result(false, "Error al obtener los datos del servidor")
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(false, "No se recibió respuesta válida del servidor")
                 return
             }
-            
-            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                
-                switch statusCode {
-                    
-                case 200...299:
-                    //Convertir resultado esperado a formato JSON
-                    let jsonTokenData = JSON(data)
-                    
-                    let userRole = jsonTokenData["rol"].string ?? "admin"
-                    
-                    let tokenStr = jsonTokenData["access_token"].string
-                    let userName = jsonTokenData["userName"].string
-                    let fullName = jsonTokenData["fullName"].string
-                    let email = jsonTokenData["email"].string
-                    
-                    let tokenRefresh = jsonTokenData["refresh_token"].string
-                    
-                    let newToken = ModelToken(tokenString: tokenStr!,refreshToken: tokenRefresh ?? "", userName: userName!, email: email!, fullName: fullName!, role: userRole)
-                    newToken.token_type = jsonTokenData ["token_type"].string
-                    newToken.issued = jsonTokenData[".issued"].string
-                    newToken.expires = jsonTokenData[".expires"].string
-                    newToken.expires_in = jsonTokenData["expires_in"].int
-                    
-                    self.currentToken = newToken
-                    
-                    result(true, nil)
-                case 400...499:
-                    let errorData = JSON(data).dictionary
-                    let errorString = errorData?["error"]?.string
-                    
-                    result(false, errorString)
-                default:
-                    result(false, "Error al contactar con el servidor")
+
+            switch httpResponse.statusCode {
+            case 200...299:
+                do {
+                    let token = try JSONDecoder().decode(ModelToken.self, from: data)
+                    // Aquí puedes asignar el token a alguna variable de estado si es necesario
+                    self.currentToken = token
+                    let tokenOne = self.currentToken?.access_token
+                    UserDefaults.standard.setValue(tokenOne, forKey: Settings.userTokenKey)
+                    completion(true, nil)
+                } catch {
+                    completion(false, "Error al decodificar los datos")
                 }
+            case 400...499:
+                completion(false, "Error del cliente al realizar la solicitud")
+            default:
+                completion(false, "Error del servidor al procesar la solicitud")
             }
         }
-        
+
         task.resume()
     }
+
+//    func requestAccessToken (user: String, password: String, result: @escaping(Bool, String?) -> Void) {
+//        
+//        let url = Settings.tokenUrl
+//        
+//        let parameters = "grant_type=password&username=\(user)&password=\(password)&origen_id=2"
+//        
+//        var request = URLRequest(url: url)
+//        
+//        request.httpMethod = "POST"
+//        request.httpBody = parameters.data(using: .utf8)
+//        request.setValue("x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        
+//        let session = URLSession.shared
+//        
+//        let task = session.dataTask(with: request) { (data, response, error) in
+//            
+//            guard error == nil else {
+//                result(false, "Error al contactar con el servidor, revise su conexión a internet o intente de nuevo mas tarde")
+//                return
+//            }
+//            
+//            guard let data = data else {
+//                result(false, "Error al obtener los datos del servidor")
+//                return
+//            }
+//            
+//            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+//                
+//                switch statusCode {
+//                    
+//                case 200...299:
+//                    //Convertir resultado esperado a formato JSON
+//                    let jsonTokenData = JSON(data)
+//                    
+//                    let userRole = jsonTokenData["rol"].string ?? "admin"
+//                    
+//                    let tokenStr = jsonTokenData["access_token"].string
+//                    let userName = jsonTokenData["userName"].string
+//                    let fullName = jsonTokenData["fullName"].string
+//                    let email = jsonTokenData["email"].string
+//                    
+//                    let tokenRefresh = jsonTokenData["refresh_token"].string
+//                    
+//                    let newToken = ModelToken(tokenString: tokenStr!,refreshToken: tokenRefresh ?? "", userName: userName!, email: email!, fullName: fullName!, role: userRole)
+//                    newToken.token_type = jsonTokenData ["token_type"].string
+//                    newToken.issued = jsonTokenData[".issued"].string
+//                    newToken.expires = jsonTokenData[".expires"].string
+//                    newToken.expires_in = jsonTokenData["expires_in"].int
+//                    
+//                    self.currentToken = newToken
+//                    
+//                    result(true, nil)
+//                case 400...499:
+//                    let errorData = JSON(data).dictionary
+//                    let errorString = errorData?["error"]?.string
+//                    
+//                    result(false, errorString)
+//                default:
+//                    result(false, "Error al contactar con el servidor")
+//                }
+//            }
+//        }
+//        
+//        task.resume()
+//    }
     
     /// Verifica que exista un token de acceso previamente almacenado en el dispositivo indicando si existe un usuario logeado en el sistema.
     ///

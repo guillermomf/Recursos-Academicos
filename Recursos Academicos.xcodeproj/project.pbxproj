@@ -16,6 +16,7 @@
 		7E27B7DA2B9A4E9800CF8A19 /* LaunchScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E27B7D92B9A4E9800CF8A19 /* LaunchScreenView.storyboard */; };
 		7E401C992BC5C60200FB6BEC /* CoursesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E401C982BC5C60200FB6BEC /* CoursesHomeView.swift */; };
 		7E401C9B2BC6E8AB00FB6BEC /* CourseHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E401C9A2BC6E8AB00FB6BEC /* CourseHomeViewModel.swift */; };
+		7E48384A2BE1FD4300A3DD62 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 7E4838492BE1FD4300A3DD62 /* BottomSheet */; };
 		7E4DEBC52BA02300008DBADD /* DetailAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEBC42BA02300008DBADD /* DetailAccountView.swift */; };
 		7E4DEBC72BA033A1008DBADD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEBC62BA033A1008DBADD /* AccountViewModel.swift */; };
 		7E4DEBCF2BA0421F008DBADD /* PrivacityNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEBCE2BA0421F008DBADD /* PrivacityNoticeView.swift */; };
@@ -46,6 +47,8 @@
 		7E4DEC142BA232A5008DBADD /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEC132BA232A5008DBADD /* MessageView.swift */; };
 		7E4DEC172BA234E9008DBADD /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEC162BA234E9008DBADD /* MessageViewModel.swift */; };
 		7E4DEC192BA24402008DBADD /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DEC182BA24402008DBADD /* DateFormatterHelper.swift */; };
+		7E65B14F2BD25E4F0012394F /* CreateNewCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65B14E2BD25E4F0012394F /* CreateNewCourseViewModel.swift */; };
+		7E65B1532BD2C84A0012394F /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65B1522BD2C8490012394F /* CourseDetailsView.swift */; };
 		7E80B17D2BAE663100E41BD1 /* SeriesHelpContentSeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E80B17C2BAE663100E41BD1 /* SeriesHelpContentSeleted.swift */; };
 		7E944D1F2BC83BE000406C54 /* CreateNewCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E944D1E2BC83BE000406C54 /* CreateNewCourseView.swift */; };
 		7EB4193D2B9A585300F43AAF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4193C2B9A585300F43AAF /* LoginView.swift */; };
@@ -153,6 +156,8 @@
 		7E4DEC132BA232A5008DBADD /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		7E4DEC162BA234E9008DBADD /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		7E4DEC182BA24402008DBADD /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
+		7E65B14E2BD25E4F0012394F /* CreateNewCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCourseViewModel.swift; sourceTree = "<group>"; };
+		7E65B1522BD2C8490012394F /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		7E80B17C2BAE663100E41BD1 /* SeriesHelpContentSeleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesHelpContentSeleted.swift; sourceTree = "<group>"; };
 		7E944D1E2BC83BE000406C54 /* CreateNewCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCourseView.swift; sourceTree = "<group>"; };
 		7EB4193C2B9A585300F43AAF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -203,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB4194E2B9A985E00F43AAF /* SwiftyJSON in Frameworks */,
+				7E48384A2BE1FD4300A3DD62 /* BottomSheet in Frameworks */,
 				7EDB965E2BA3A6F9003E84C1 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,9 +451,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7E65B14D2BD25E2D0012394F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7E65B14E2BD25E4F0012394F /* CreateNewCourseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7E65B1502BD2C8080012394F /* CourseDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7E65B1512BD2C8190012394F /* View */,
+			);
+			path = CourseDetails;
+			sourceTree = "<group>";
+		};
+		7E65B1512BD2C8190012394F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E65B1522BD2C8490012394F /* CourseDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7E7580842BBB9E0600DC578F /* Courses */ = {
 			isa = PBXGroup;
 			children = (
+				7E65B1502BD2C8080012394F /* CourseDetails */,
 				7E944D1C2BC83BAD00406C54 /* CreateNewCourse */,
 				7EF92EF72BC7BB560047AC93 /* Model */,
 				7EF92EF62BC7BA4E0047AC93 /* ViewModel */,
@@ -459,6 +490,7 @@
 		7E944D1C2BC83BAD00406C54 /* CreateNewCourse */ = {
 			isa = PBXGroup;
 			children = (
+				7E65B14D2BD25E2D0012394F /* ViewModel */,
 				7E944D1D2BC83BC000406C54 /* View */,
 			);
 			path = CreateNewCourse;
@@ -782,6 +814,7 @@
 			packageProductDependencies = (
 				7EB4194D2B9A985E00F43AAF /* SwiftyJSON */,
 				7EDB965D2BA3A6F9003E84C1 /* SwiftUIX */,
+				7E4838492BE1FD4300A3DD62 /* BottomSheet */,
 			);
 			productName = "Recursos Academicos";
 			productReference = 7E27B7AB2B9A4D8700CF8A19 /* Recursos Academicos.app */;
@@ -858,6 +891,7 @@
 			packageReferences = (
 				7EB4194C2B9A985E00F43AAF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				7EDB965C2BA3A6F9003E84C1 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				7E4838482BE1FD4300A3DD62 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 			);
 			productRefGroup = 7E27B7AC2B9A4D8700CF8A19 /* Products */;
 			projectDirPath = "";
@@ -935,6 +969,7 @@
 				7EF799CE2BB4A38E00C8E5FA /* VideoView.swift in Sources */,
 				7EF92EFF2BC7BC140047AC93 /* ExamModel.swift in Sources */,
 				7EB419872B9C3F7A00F43AAF /* AcademicManagementDocumentsViewModel.swift in Sources */,
+				7E65B1532BD2C84A0012394F /* CourseDetailsView.swift in Sources */,
 				7E401C9B2BC6E8AB00FB6BEC /* CourseHomeViewModel.swift in Sources */,
 				7EB4196C2B9BB0F500F43AAF /* HomeView.swift in Sources */,
 				7EB419632B9AA74F00F43AAF /* Recursos_AcademicosApp.swift in Sources */,
@@ -961,6 +996,7 @@
 				7E4DEC142BA232A5008DBADD /* MessageView.swift in Sources */,
 				7E1C2F132BB4BA030039A728 /* DownloadManager.swift in Sources */,
 				7E4DEBE92BA1351F008DBADD /* MessageInboxViewModel.swift in Sources */,
+				7E65B14F2BD25E4F0012394F /* CreateNewCourseViewModel.swift in Sources */,
 				7E4DEBDA2BA111B5008DBADD /* NotificationModel.swift in Sources */,
 				7E4DEBD42BA110E3008DBADD /* NotificationSrv.swift in Sources */,
 				7E401C992BC5C60200FB6BEC /* CoursesHomeView.swift in Sources */,
@@ -1330,6 +1366,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7E4838482BE1FD4300A3DD62 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/bottom-sheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.12;
+			};
+		};
 		7EB4194C2B9A985E00F43AAF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -1349,6 +1393,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7E4838492BE1FD4300A3DD62 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E4838482BE1FD4300A3DD62 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
 		7EB4194D2B9A985E00F43AAF /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7EB4194C2B9A985E00F43AAF /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

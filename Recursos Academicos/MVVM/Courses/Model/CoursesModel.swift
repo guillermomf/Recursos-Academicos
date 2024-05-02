@@ -10,14 +10,23 @@ import Foundation
 import SwiftyJSON
 import CoreData
 
-class CoursesModel {
+class CoursesModel: Hashable {
+    // Conformidad con Equatable
+     static func == (lhs: CoursesModel, rhs: CoursesModel) -> Bool {
+         return lhs.id == rhs.id
+     }
+     
+     // Conformidad con Hashable
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(id)  // Usualmente, el id es suficiente si es único
+     }
     var id : Int
     var name : String
     var description : String
     var goal : String
-    var startDate : String
+    var startDate : String?
     var formattedStartDate : Date
-    var endDate : String
+    var endDate : String?
     var formattedEndDate : Date
     var active : Bool
     var subject : String
@@ -37,7 +46,7 @@ class CoursesModel {
     var professorName : String?
     var courseSections : [SectionModel]?
     var examSchedules : [CourseExamSchedule]?
-    var groupId : Int
+    var groupId : Int? 
     
     /// Inicializar el modelo utilizando un objeto de tipo JSON
     ///
@@ -65,15 +74,16 @@ class CoursesModel {
         self.saturday = jsonObject["saturday"].bool!
         self.sunday = jsonObject["sunday"].bool!
         self.professorName = jsonObject["user"]["fullName"].string
-        self.groupId = jsonObject["studentGroups"][0]["id"].int!
+        self.groupId = jsonObject["studentGroups"][0]["id"].int
+    
         
         //Convertir el string de fecha de inicio en un objeto de tipo Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd'T'HH:mm:ss"
-        self.formattedStartDate = dateFormatter.date(from: self.startDate)!
+        self.formattedStartDate = dateFormatter.date(from: self.startDate ?? String()) ?? Date()
         
         //Convertir el string de fecha de fin en un objeto de tipo Date
-        self.formattedEndDate = dateFormatter.date(from: self.endDate)!
+        self.formattedEndDate = dateFormatter.date(from: self.endDate ?? String()) ?? Date()
         
         //Obtener el listado de programación de examenes
         examSchedules = []
@@ -122,10 +132,10 @@ class CoursesModel {
         //Convertir el string de fecha de inicio en un objeto de tipo Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd'T'HH:mm:ss"
-        self.formattedStartDate = dateFormatter.date(from: self.startDate)!
+        self.formattedStartDate = dateFormatter.date(from: self.startDate ?? "")!
         
         //Convertir el string de fecha de fin en un objeto de tipo Date
-        self.formattedEndDate = dateFormatter.date(from: self.endDate)!
+        self.formattedEndDate = dateFormatter.date(from: self.endDate ?? "")!
     }
 }
 

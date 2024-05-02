@@ -32,7 +32,7 @@ struct NavigationBarCustom: View {
                 .customFont(fontKey: .robotolight, size: 26)
                 .padding(.leading)
             Spacer()
-        }
+        }.padding(.top)
     }
 }
 
@@ -339,6 +339,7 @@ struct CalendarFieldCustom: View {
             TextField("", text: $name)
                 .customFont(fontKey: .robotoregular, size: 17)
                 .foregroundStyle(Color.init(hex: "#444444")!)
+                .disabled(true)
             Spacer()
             Image(systemName: "calendar")
                 .background(

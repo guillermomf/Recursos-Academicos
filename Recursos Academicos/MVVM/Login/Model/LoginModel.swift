@@ -11,7 +11,7 @@ import SwiftyJSON
 import CoreData
 
 /// Modelo correspondiente a los Token de acceso al sistema
-class ModelToken {
+class ModelToken: Decodable {
     var access_token : String
     var refresh_token : String
     var token_type : String?

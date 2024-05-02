@@ -9,8 +9,11 @@ import Foundation
 
 
 class CourseHomeViewModel: ObservableObject {
-    
     @Published var CourseList : [CoursesModel] = []
+    @Published var searchText: String = String()
+    @Published var showFilterSheet: Bool = Bool()
+    @Published var alphabetic: Bool = Bool()
+    @Published var oldest: Bool = Bool()
     
     func validateSession() {
         //Vaciar cursos de la tabla
@@ -51,12 +54,10 @@ class CourseHomeViewModel: ObservableObject {
             
             if result {
                 DispatchQueue.main.async {
-                   
                     self.CourseList = CourseSrv.SharedInstance.persistentCourseList!.sorted(by: {$1.formattedStartDate < $0.formattedStartDate})
 //                    self.tbCourses.reloadData()
                     print("CourseList \(self.CourseList)")
 //                    self.loaderIndicator.stopAnimating()
-                    
                     if self.CourseList.count == 0 {
                         print("CourseList isEmpty")
 //                        self.tbCourses.backgroundView = self.emptyView
@@ -78,7 +79,13 @@ class CourseHomeViewModel: ObservableObject {
         }
     }
 
-    
+//    func searchStore() {
+//        if searchText.isEmpty {
+//            self.CourseList = self.CourseList
+//        } else {
+//            self.CourseList = self.CourseList.filter{$0.name.localizedStandardContains(searchText)}
+//        }
+//    }
     /// This funtion get the icon of AcountDetailView options
     /// - Parameters:
     ///    - action: The button that we want the icon

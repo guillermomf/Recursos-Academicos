@@ -10,7 +10,17 @@ import Foundation
 import SwiftyJSON
 import CoreData
 
-class SectionModel {
+class SectionModel: Hashable {
+    
+    // Conformidad con Equatable
+     static func == (lhs: SectionModel, rhs: SectionModel) -> Bool {
+         return lhs.id == rhs.id
+     }
+     
+     // Conformidad con Hashable
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(id)  // Usualmente, el id es suficiente si es único
+     }
     var id : Int
     var order : Int
     var content : String?
@@ -52,7 +62,16 @@ class SectionModel {
     }
 }
 
-class SectionClassModel {
+class SectionClassModel: Hashable {
+    // Conformidad con Equatable
+     static func == (lhs: SectionClassModel, rhs: SectionClassModel) -> Bool {
+         return lhs.id == rhs.id
+     }
+     
+     // Conformidad con Hashable
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(id)  // Usualmente, el id es suficiente si es único
+     }
     var id : Int
     var content : String?
     var order : Int

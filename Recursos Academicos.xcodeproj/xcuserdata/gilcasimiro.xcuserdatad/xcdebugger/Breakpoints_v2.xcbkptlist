@@ -7,77 +7,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7631281A-8E86-4338-9C13-5555C0BBD698"
+            uuid = "E16E0810-A0B4-4CDB-BD8C-D52768BBA625"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Recursos Academicos/Network/MessagesSrv.swift"
+            filePath = "Recursos Academicos/MVVM/Login/Model/LoginModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
-            landmarkName = "getStoredMessages(chatGroupId:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "init(tokenString:refreshToken:userName:email:fullName:role:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A7FC203-3F59-4BE7-A2DE-DBAE231ABA4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recursos Academicos/MVVM/Login/Model/LoginModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "init(tokenString:refreshToken:userName:email:fullName:role:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
+                  uuid = "0A7FC203-3F59-4BE7-A2DE-DBAE231ABA4D - 7822ec9d91ec5311"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  symbolName = "Recursos_Academicos.ModelToken.__allocating_init(tokenString: Swift.String, refreshToken: Swift.String, userName: Swift.String, email: Swift.String, fullName: Swift.String, role: Swift.String) -&gt; Recursos_Academicos.ModelToken"
                   moduleName = "Recursos Academicos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos-Academicos/Recursos%20Academicos/MVVM/Login/Model/LoginModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "860">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "100">
                </Location>
                <Location
-                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
+                  uuid = "0A7FC203-3F59-4BE7-A2DE-DBAE231ABA4D - c21fb72fdaaf230c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
+                  symbolName = "Recursos_Academicos.ModelToken.init(tokenString: Swift.String, refreshToken: Swift.String, userName: Swift.String, email: Swift.String, fullName: Swift.String, role: Swift.String) -&gt; Recursos_Academicos.ModelToken"
                   moduleName = "Recursos Academicos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
+                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos-Academicos/Recursos%20Academicos/MVVM/Login/Model/LoginModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "844">
-               </Location>
-               <Location
-                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 52833ce6d264ea50"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
-                  moduleName = "Recursos Academicos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos%20Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "892">
-               </Location>
-               <Location
-                  uuid = "7631281A-8E86-4338-9C13-5555C0BBD698 - 32ce923966c980d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Recursos_Academicos.MessagesSrv.getStoredMessages(chatGroupId: Swift.Int) -&gt; Swift.Array&lt;Recursos_Academicos.MessageModel&gt;"
-                  moduleName = "Recursos Academicos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gilcasimiro/Desktop/Recursos-Academicos/Recursos%20Academicos/Network/MessagesSrv.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "892">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "204">
                </Location>
             </Locations>
          </BreakpointContent>

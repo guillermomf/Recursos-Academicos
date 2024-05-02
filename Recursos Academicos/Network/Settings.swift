@@ -30,7 +30,9 @@ public class Settings {
     //QA
     //static let baseUrl : String = "https://ralarousse-deploy.azurewebsites.net/"
     //PROD
-    static let baseUrl : String = "https://hlrma-api.azurewebsites.net/"
+    static let baseUrl : String = "https://unificacion-api.azurewebsites.net/"
+//    static let baseUrlB : String = "https://hlrma-api.azurewebsites.net"
+    //https://unificacion-api.azurewebsites.net/token
     
     //URLs de servicios de eventos
     static let eventsUrl : URL = URL(string: baseUrl + "api/events/student?date=")!
@@ -42,7 +44,7 @@ public class Settings {
     //URLs de servicios de seguridad
     static let tokenUrl : URL = URL(string: baseUrl + "token")!
     static let passwordRecoveryUrl : URL = URL(string: baseUrl + "api/users/resetpassword")!
-    static let userProfileUrl : URL = URL(string: baseUrl + "/api/users/profile?origin=2")!
+    static let userProfileUrl : URL = URL(string: baseUrl + "api/users/profile?origin=2")!
     static let sessionValidationUrl : URL = URL(string: baseUrl + "api/users/validateSession")!
     
     //URLs de servicios de Nodos
@@ -87,7 +89,7 @@ public class Settings {
     static let childNodeURL : URL = URL(string: baseUrl + "api/nodes/")!*/
     
     //URLs de servicios de cursos
-    static let coursesURL : URL = URL(string:  baseUrl + "api/students/courses?blockId=0")!
+    static let coursesURL : URL = URL(string:  baseUrl + "api/courses/teacher")!
     static let coursesTasksURL : URL = URL(string: baseUrl + "api/homeworks/student?studentGroupId=")!
     static let homeworkUploadUrl : URL = URL(string: baseUrl + "api/homeworks/uploadAnswer")!
     static let courseActivitiesURL: URL = URL(string: baseUrl + "api/activities/student?studentGroupId=")!
