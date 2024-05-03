@@ -91,7 +91,9 @@ struct ButtonOrangeCustom: View {
             Text(title)
                 .foregroundColor(Color.white)
                 .customFont(fontKey: .robotoBold, size: 16)
+            
         }
+        .frame(width: 335, height: 50)
         .background(
             RoundedCorner(radius: 16)
                 .foregroundStyle(LinearGradient(colors: [Color.init(hex: "#FFC69F")!, Color.init(hex: "#FF5793")!], startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
@@ -129,20 +131,26 @@ struct ButtonBlueCustom: View {
 ///    - colorOne: Color in hexadecimal, string type
 ///    - colorTwo: Color in hexadecimal, string type
 struct ButtonGradientCustom: View {
+    @State var image: String
     @State var title: String
     @State var colorOne: String
     @State var colorTwo: String
     @State var width: CGFloat
     @State var height: CGFloat
+
     var body: some View{
         HStack{
+            if !image.isEmpty {
+            Image(systemName: image)
+                    .frame(width: 20, height: 20)
+            }
             Text(title)
-                .frame(width: width, height: height)
         }
+        .frame(width: width, height: height)
         .background(
             RoundedCorner(radius: 16)
                 .foregroundStyle(LinearGradient(colors: [Color.init(hex: colorOne)!, Color.init(hex: colorTwo)!], startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/))
-                .frame(width: width, height: height)
+                
         )
     }
 }
@@ -367,16 +375,118 @@ struct CalendarFieldCustom: View {
             }
     }
 }
+///
+/// Editor text field
+/// - Parameters:
+///  - placeHolder: set a pleceholder in the view
+///  - text: text that we want send
+///
+
+struct customTextEditor: View {
+    enum Field: Hashable {
+        case myField
+    }
+    let placeHolder: String
+    @Binding var text: String
+    @FocusState private var focusedField: Field?
+    var body: some View {
+        ZStack(alignment: .topLeading){
+            if text.isEmpty {
+                Text(placeHolder)
+                    .foregroundStyle(Color.primary.opacity(0.25))
+                    .padding(EdgeInsets(top: 7, leading: 4, bottom: 0, trailing: 0))
+                    .padding(5)
+            }
+            TextEditor(text: $text)
+                .padding(5)
+                .focused($focusedField, equals: .myField)
+        }.toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    focusedField = nil
+                }
+            }
+        }
+    }
+}
+
+// MARK: Chcek this alignment componet
+
+enum TextAlign: String, CaseIterable {
+    case left = "text.alignleft"
+    case center = "text.aligncenter"
+    case right = "text.alignright"
+    
+    var alignment: TextAlignment {
+        switch self {
+        case .left:
+            return .leading
+        case .center:
+            return .center
+        case .right:
+            return .trailing
+        }
+    }
+}
+
+struct TextEditorCustom: View {
+    
+    init() {
+        UITextView.appearance().backgroundColor = .gray
+    }
+    @State var textAlignment: TextAlignment = .leading
+    @State var text = ""
+    @State var xOffset = 0.0
+    
+    var body: some View {
+        VStack {
+            TextEditor(text: $text)
+                .multilineTextAlignment(textAlignment)
+                .padding()
+                .background(Color.yellow)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(width: 50, height: 40)
+                    .foregroundColor(.gray)
+                    .offset(x: xOffset)
+                
+                ForEach(Array(TextAlign.allCases.enumerated()), id: \.offset) { index, alignment in
+                    Image(systemName: alignment.rawValue)
+                        .padding(10)
+                        .onTapGesture {
+                            withAnimation {
+                                textAlignment = alignment.alignment
+                                xOffset = CGFloat(index) * 135
+                            }
+                        }
+                    
+                    if alignment != TextAlign.allCases.last {
+                        Spacer()
+                    }
+                }
+            }
+            .padding()
+            .font(.title)
+            .foregroundColor(.white)
+            .background(Color.black)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+        }
+        .padding()
+    }
+}
 
 struct VisualComponents_Previews: PreviewProvider {
     static var previews: some View {
         //        NavigationBarCustom(title: String())
         //        ButtonBlueCustom(title: String("hola"), image: "eye")
-        //        ButtonGradientCustom(title: "test", colorOne: "#BD76E2", colorTwo: "FF5793", width: 100, height: 50)
+        ButtonGradientCustom(image: "eye", title: "test", colorOne: "#BD76E2", colorTwo: "FF5793", width: 100, height: 50)
         //        downLoadToSeeOfflineComponent(title: "hola", isActiveDownLoad: |false)
         //        NavigationBarCustomTwoLines(title: "hola\n hola")
         //        SearchBarCustom(textToSearch: String())
         //        TextFieldCustom(text: "", placeHolder: "Write here")
-        InteractiveFieldCustom(actionButton: {print("hola")}, name: .constant("Hola"), imageName: "chevron.down", optionArray: ["hola", "adios"], isSelected: .constant(true))
+//        InteractiveFieldCustom(actionButton: {print("hola")}, name: .constant("Hola"), imageName: "chevron.down", optionArray: ["hola", "adios"], isSelected: .constant(true))
     }
 }

@@ -52,7 +52,7 @@ struct CreateNewCourseView: View {
                     Button(action: {
                         //Action
                     }, label: {
-                        ButtonGradientCustom(title: "Cancelar", colorOne: "#EDEDED", colorTwo: "#EDEDED", width: 160, height: 50)
+                        ButtonGradientCustom(image: "", title: "Cancelar", colorOne: "#EDEDED", colorTwo: "#EDEDED", width: 160, height: 50)
                             .foregroundStyle(Color.init(hex: "#252B33")!)
                             .customFont(fontKey: .robotoregular, size: 16)
                     })
@@ -60,7 +60,7 @@ struct CreateNewCourseView: View {
                     Button(action: {
                         print("\(viewModel.textCourseName), \(viewModel.textInstitution), \(viewModel.textTopic), \(viewModel.textDescription), \(viewModel.textObjetive), \(viewModel.academicLevelSelected), \(viewModel.gradeSelected), \(viewModel.showDayOfWeekSelected), \(viewModel.startDateSelected), \(viewModel.endDateSelected)")
                     }, label: {
-                        ButtonGradientCustom(title: "Guardar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
+                        ButtonGradientCustom(image: "", title: "Guardar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
                             .foregroundStyle(Color.init(hex: "#FFFFFF")!)
                             .customFont(fontKey: .robotoregular, size: 16)
                     })

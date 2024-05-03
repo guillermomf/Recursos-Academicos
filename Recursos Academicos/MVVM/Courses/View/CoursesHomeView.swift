@@ -176,7 +176,7 @@ struct CourseFilterSheet: View {
                 Button(action: {
                     hiddenFilterView.toggle()
                 }, label: {
-                    ButtonGradientCustom(title: "Cancelar", colorOne: "#EDEDED", colorTwo: "#EDEDED", width: 160, height: 50)
+                    ButtonGradientCustom(image: "", title: "Cancelar", colorOne: "#EDEDED", colorTwo: "#EDEDED", width: 160, height: 50)
                         .foregroundStyle(Color.init(hex: "#252B33")!)
                         .customFont(fontKey: .robotoregular, size: 16)
                 })
@@ -184,7 +184,7 @@ struct CourseFilterSheet: View {
                 Button(action: {
                     hiddenFilterView.toggle()
                 }, label: {
-                    ButtonGradientCustom(title: "Seleccionar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
+                    ButtonGradientCustom(image: "", title: "Seleccionar", colorOne: "#BD76E2", colorTwo: "FF5793", width: 160, height: 50)
                         .foregroundStyle(Color.init(hex: "#FFFFFF")!)
                         .customFont(fontKey: .robotoregular, size: 16)
                 })
